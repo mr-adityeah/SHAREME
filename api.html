@@ -1,0 +1,144 @@
+﻿<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Convenient file sharing. Think of it as Pastebin for files. Registration is not required. Large files are supported.">
+        <meta name="author" content="Espen Braastad">
+        <link rel="icon" href="static/img/favicon.png">
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+        <link rel="stylesheet" type="text/css" href="static/css/swagger-ui.css">
+        <script src="static/js/swagger-ui-bundle.js"> </script>
+        <script src="static/js/swagger-ui-standalone-preset.js"> </script>
+        <script>
+            window.onload = function() {
+                
+                window.ui = SwaggerUIBundle({
+                    url: "/api.yaml",
+                    dom_id: '#swagger-ui',
+                    deepLinking: true,
+                    presets: [
+                        SwaggerUIBundle.presets.apis,
+                        SwaggerUIStandalonePreset
+                    ],
+                    supportedSubmitMethods:['get', 'post', 'lock', 'delete'],
+                    plugins: [
+                        SwaggerUIBundle.plugins.DownloadUrl
+                    ],
+                    layout: "StandaloneLayout"
+                });
+            }
+        </script>
+        <title>Filebin | API documentation</title>
+        <style>
+            html {
+                box-sizing: border-box;
+                overflow: -moz-scrollbars-vertical;
+                overflow-y: scroll;
+            }
+
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
+      
+            body {
+                margin:0;
+                background: #fafafa;
+            }
+
+            .topbar {
+                display:none;
+            }
+            .information-container {
+                display:none;
+            }
+            .scheme-container {
+                display:none;
+            }
+        </style>
+    </head>
+
+    <body class="container-xl">
+        
+
+
+<nav class="navbar navbar-expand-sm navbar-light d-flex justify-content-between align-items-start">
+    <div>
+        <ul class="navbar-nav">
+	    
+                <li class="nav-item">
+                    <a class="nav-link" href="index.htm">Create new bin</a>
+                </li>
+            
+        </ul>
+    </div>
+    <div class="text-right">
+        <ul class="navbar-nav">
+	    
+        </ul>
+    </div>
+</nav>
+
+
+<hr class="mt-0">
+
+
+
+<div class="modal fade" id="modalTakedown" tabindex="-1" role="dialog" aria-labelledby="modalTakedownTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header alert-secondary">
+                <h5 class="modal-title" id="modalTakedownTitle">Takedown</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>This web service provides functionality for clients to upload and download files.</p>
+
+                <p>There is an opportunity to abuse this to share illegal, copyrighted or malicious content, even though this is against the <a href="terms.html">Terms and conditions</a>. There is no automatic moderation of such content, but anyone familiar with the location of the files can delete them at their own will.</p>
+
+                <p>If this bin contains files that should not be here, please <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalDeleteBin">delete the bin</a>. This will immediately make the files unavailable, and is faster than sending a takedown request to the service owner.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalDeleteBin">
+                    <i class="fas fa-fw fa-trash-alt"></i> Delete bin
+                </button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+        <h1>API documentation</h1>
+
+        <p>This API documentation page is generated from the <a href="api.yaml">OpenAPI 3.0 specification</a> and aims to make it easy to create tools to upload, list, download and delete files from Filebin.</p>
+
+        <div id="swagger-ui"></div>
+
+        
+<nav class="navbar navbar-expand-sm navbar-light small">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="api.html">API documentation</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="privacy.html">Privacy</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="terms.html">Terms and conditions</a>
+        </li>
+    </ul>
+</nav>
+
+
+        <script src="static/js/popper.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+    </body>
+</html>
